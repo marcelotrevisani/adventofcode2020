@@ -1,14 +1,33 @@
 from pathlib import Path
 
-from day1.day1 import solution_day1
+import pytest
+
+from day1.day1 import solution_day1_part1, solution_day1_part2
 
 
-def test_day1_example():
-    assert solution_day1([1721, 979, 366, 299, 675, 1456]) == 514579
+@pytest.fixture(scope="function")
+def input_example():
+    return [1721, 979, 366, 299, 675, 1456]
 
 
-def test_day1_input():
+@pytest.fixture(scope="function")
+def list_input_file():
     input_path = Path(__file__).parent / "input.txt"
     with open(input_path, "r") as input_file:
-        all_numbers = [int(line) for line in input_file.readlines() if line.strip()]
-        assert solution_day1(all_numbers) == 1013211
+        return [int(line) for line in input_file.readlines() if line.strip()]
+
+
+def test_day1_part1_example(input_example):
+    assert solution_day1_part1(input_example) == 514579
+
+
+def test_day1_input_part1(list_input_file):
+    assert solution_day1_part1(list_input_file) == 1013211
+
+
+def test_day1_part2_example(input_example):
+    assert solution_day1_part2(input_example) == 241861950
+
+
+def test_day1_input_part2(list_input_file):
+    assert solution_day1_part2(list_input_file) == 13891280
