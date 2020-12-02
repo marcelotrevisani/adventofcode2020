@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from day2.day2 import solve_day2_part1
+from day2.day2 import solve_day2_part1, solve_day2_part2
 
 
 @pytest.fixture(scope="session")
@@ -24,3 +24,11 @@ def test_day2_part1_example(input_example_day2):
 
 def test_day2_part1_input(input_day2):
     assert solve_day2_part1(input_day2) == 620
+
+
+def test_day2_part2_example(input_example_day2):
+    assert solve_day2_part2(input_example_day2) == 1
+
+
+def test_day2_part2_input(input_day2):
+    assert solve_day2_part2(input_day2) == 727
