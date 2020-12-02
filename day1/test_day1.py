@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from day1.day1 import solution_day1_part1, solution_day1_part2
+from day1.day1 import solve_day1_part1, solve_day1_part2
 
 
 @pytest.fixture(scope="function")
@@ -18,16 +18,16 @@ def list_input_file():
 
 
 def test_day1_part1_example(input_example):
-    assert solution_day1_part1(input_example) == 514579
+    assert solve_day1_part1(input_example) == 514579
 
 
 def test_day1_input_part1(list_input_file):
-    assert solution_day1_part1(list_input_file) == 1013211
+    assert solve_day1_part1(list_input_file) == 1013211
 
 
 def test_day1_part2_example(input_example):
-    assert solution_day1_part2(input_example) == 241861950
+    assert solve_day1_part2(input_example) == 241861950
 
 
 def test_day1_input_part2(list_input_file):
-    assert solution_day1_part2(list_input_file) == 13891280
+    assert solve_day1_part2(list_input_file) == 13891280

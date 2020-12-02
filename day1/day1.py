@@ -8,7 +8,7 @@ def get_min_start(sorted_list: List[int], stop_num: int = 2020) -> int:
     raise ValueError("It was not possible to find the numbers which the sum is 2020")
 
 
-def solution_day1_part1(
+def solve_day1_part1(
     input_list: List[int], *, stop_num: int = 2020, is_sorted: bool = False
 ) -> int:
     if not is_sorted:
@@ -27,11 +27,11 @@ def solution_day1_part1(
     raise ValueError("It was not possible to find the numbers which the sum is 2020")
 
 
-def solution_day1_part2(input_list: List[int]) -> int:
+def solve_day1_part2(input_list: List[int]) -> int:
     input_list.sort(reverse=True)
     for pos, num in enumerate(input_list):
         try:
-            return num * solution_day1_part1(
+            return num * solve_day1_part1(
                 input_list[pos:], stop_num=2020 - num, is_sorted=True
             )
         except ValueError:
