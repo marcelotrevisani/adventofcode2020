@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 
 def solve_day3_part1(input_list: List[str], right: int = 3, down: int = 1) -> int:
@@ -12,3 +12,12 @@ def solve_day3_part1(input_list: List[str], right: int = 3, down: int = 1) -> in
         v_pos += down
         h_pos += right
     return num_tree
+
+
+def solve_day3_part2(list_slopes: List[Tuple[int, int]], input_list: List[str]) -> int:
+    result = solve_day3_part1(
+        input_list, right=list_slopes[0][0], down=list_slopes[0][1]
+    )
+    for right, down in list_slopes[1:]:
+        result *= solve_day3_part1(input_list, right=right, down=down)
+    return result
