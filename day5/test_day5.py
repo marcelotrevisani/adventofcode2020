@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from day5.day5 import search_num, solve_day5_part1
+from day5.day5 import search_num, solve_day5_part1, solve_day5_part2
 
 
 @pytest.fixture
@@ -37,4 +37,11 @@ def test_day5_part1_input(input_day5):
     assert (
         solve_day5_part1(input_day5, min_row=0, max_row=127, min_col=0, max_col=7)
         == 926
+    )
+
+
+def test_day5_part2_input(input_day5):
+    assert (
+        solve_day5_part2(input_day5, min_row=0, max_row=127, min_col=0, max_col=7)
+        == 657
     )
