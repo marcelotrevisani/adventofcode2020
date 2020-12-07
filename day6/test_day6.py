@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from day6.day6 import solve_day6_part1
+from day6.day6 import solve_day6_part1, solve_day6_part2
 
 
 @pytest.fixture
@@ -37,3 +37,11 @@ def test_day6_part1_example(example_day6):
 
 def test_day6_part1_input(input_day6):
     assert solve_day6_part1(input_day6) == 6585
+
+
+def test_day6_part2_example(example_day6):
+    assert solve_day6_part2(example_day6) == 6
+
+
+def test_day6_part2_input(input_day6):
+    assert solve_day6_part2(input_day6) == 3276
